@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CONNECTION TO METAMASK</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <style>
+        body {
+            background-color: palevioletred;
+            font-size: 33px;
+            text-align: center;
+        }
+        button {
+            background-color: aquamarine;
+            font-size: 33px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        button:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+	<button onclick="connectMetamask()">CONNECT TO METAMASK</button> <br>
+	<p id="accountArea"></p>
+	<button onclick="connectContract()">CONNECT TO CONTRACT</button> <br>
+	<p id="contractArea"></p>
+	<button onclick="readContract()">GET DATA FROM CONTRACT</button> <br>
+	<p id="dataArea"></p>
+    <script>
+        // 1- se cconnecter a metamask
+        let account;
+        const connectMetamask = async () => {
+          if(window.ethereum !== "undefined") {
+            const accounts = await ethereum.request({method: "eth_requestAccounts"})
+            account = accounts[0];
+            document.getElementById("accountArea").innerHTML = account;
+          }
+        }
+         // 1- se cconnecter au smart contract
+         const connectToContract = async () => {
+            const ABI = ;
+            const address "";
+            window.web3 = await new web3(window.ethereum);
+            window.contract = await new window.web3.eth.Contract(ABI, Address);
+            document.getElementById("contractArea").innerHTML = "connecter au smart contrat";
+           
+         }
+    </script>
+
+</body>
+</html>
